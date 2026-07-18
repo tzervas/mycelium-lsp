@@ -12,18 +12,18 @@ publish = false
 workspace = true
 
 [dependencies]
-mycelium-core = { path = "../mycelium-core" }
-mycelium-interp = { path = "../mycelium-interp" }
-mycelium-cert = { path = "../mycelium-cert" }
+mycelium-core = { git = "https://github.com/tzervas/mycelium-core", rev = "781d3fcceba82acfe6b0eb46650513bd78a2416b" }
+mycelium-interp = { git = "https://github.com/tzervas/mycelium-runtime", rev = "ab9cee665b620ed80ab74ea61ea639817dc49077" }
+mycelium-cert = { git = "https://github.com/tzervas/mycelium-runtime", rev = "ab9cee665b620ed80ab74ea61ea639817dc49077" }
 # The EXPLAIN surfacing (M-221; SC-5): the facade re-derives selection explanations from a
 # PolicyRegistry so "why was this representation chosen?" is answerable in-editor (RFC-0005 §4).
-mycelium-select = { path = "../mycelium-select" }
+mycelium-select = { git = "https://github.com/tzervas/mycelium-runtime", rev = "ab9cee665b620ed80ab74ea61ea639817dc49077" }
 # Document sync (M-310): the text → Node pipeline (parse → check → elaborate) the LSP server runs on
 # `didOpen`/`didChange`. The L1 surface prototype, now that RFC-0011 r3 / RFC-0001 r4 are enacted.
-mycelium-l1 = { path = "../mycelium-l1" }
+mycelium-l1 = { git = "https://github.com/tzervas/mycelium-l1", rev = "cd32a1ed7ab7d2be38c9c3047da7318d182b7a1c" }
 # M-359 project metadata: the structured nodule header + manifest + inheritance, so the linter can
 # check the header (unknown key / bad SPDX / non-ISO date = explicit error, G2). Above the kernel (KC-3).
-mycelium-proj = { path = "../mycelium-proj" }
+mycelium-proj = { git = "https://github.com/tzervas/mycelium-proj", rev = "cfc934b32c0b7b57becbb7ddfe3c516712c6ec0e" }
 # The LSP wire protocol (M-310): JSON-RPC 2.0 framing + LSP-shaped diagnostics over stdio. The same
 # pinned serde_json the rest of the workspace uses (mycelium-core/-cert/-select/...).
 serde_json.workspace = true
@@ -37,9 +37,36 @@ blake3.workspace = true
 # RFC-0041 §4.7 W1: the shared recursion-budget + guarded-stack leaf, so `llm_canonical`'s
 # post-elaboration `Node` render runs on a grown host stack instead of SIGABRT-ing the LSP server on
 # a deep editor buffer (RR-29 guard-hole census).
-mycelium-workstack = { path = "../mycelium-workstack" }
+mycelium-workstack = { git = "https://github.com/tzervas/mycelium-core", rev = "781d3fcceba82acfe6b0eb46650513bd78a2416b" }
 
 # M-330 co-authoring loop: the stdin→publishDiagnostics shim used by coauthor.py.
 [[example]]
 name = "check"
 path = "examples/check.rs"
+
+# --- standalone workspace root (course-correction Phase B, 2026-07-18; steer handoff §6.2) ---
+[workspace]
+
+[workspace.package]
+version = "0.464.0"
+edition = "2021"
+rust-version = "1.96.1"
+license = "MIT"
+repository = "https://github.com/tzervas/mycelium-lsp"
+
+[workspace.dependencies]
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+blake3 = "1"
+
+[workspace.lints.rust]
+# ADR-014: unsafe permitted-but-documented; the check is clippy::undocumented_unsafe_blocks.
+unsafe_code = "allow"
+
+[workspace.lints.clippy]
+all = { level = "warn", priority = -1 }
+undocumented_unsafe_blocks = "warn"
+
+# G2 never-silent arithmetic: release builds panic on overflow (monorepo parity).
+[profile.release]
+overflow-checks = true

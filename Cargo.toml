@@ -23,7 +23,7 @@ mycelium-select = { git = "https://github.com/tzervas/mycelium-runtime", rev = "
 mycelium-l1 = { git = "https://github.com/tzervas/mycelium-l1", rev = "4e4a29679d8e941eab86fad40f49c9947e68eefd" }
 # M-359 project metadata: the structured nodule header + manifest + inheritance, so the linter can
 # check the header (unknown key / bad SPDX / non-ISO date = explicit error, G2). Above the kernel (KC-3).
-mycelium-proj = { git = "https://github.com/tzervas/mycelium-proj", rev = "610624021a0ea43d3919d4200d7522e31a6dcce0" }
+mycelium-proj = { git = "https://github.com/tzervas/mycelium-proj", rev = "ccc1936734875d098fa99cce7570b23f1f6880e3" }
 # The LSP wire protocol (M-310): JSON-RPC 2.0 framing + LSP-shaped diagnostics over stdio. The same
 # pinned serde_json the rest of the workspace uses (mycelium-core/-cert/-select/...).
 serde_json.workspace = true

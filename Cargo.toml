@@ -12,7 +12,7 @@ publish = false
 workspace = true
 
 [dependencies]
-mycelium-core = { git = "https://github.com/tzervas/mycelium-core", rev = "46d2515cbd86d2ae4d1365f4adcd2796737e9f0b" }
+mycelium-core = { git = "https://github.com/tzervas/mycelium-core", rev = "3958d2ea3c3921611e33f1f00e3469b29a939a76" }
 mycelium-interp = { git = "https://github.com/tzervas/mycelium-runtime", rev = "cb3a96348f718661dbd3db43224a036df272e177" }
 mycelium-cert = { git = "https://github.com/tzervas/mycelium-runtime", rev = "cb3a96348f718661dbd3db43224a036df272e177" }
 # The EXPLAIN surfacing (M-221; SC-5): the facade re-derives selection explanations from a
@@ -37,7 +37,7 @@ blake3.workspace = true
 # RFC-0041 §4.7 W1: the shared recursion-budget + guarded-stack leaf, so `llm_canonical`'s
 # post-elaboration `Node` render runs on a grown host stack instead of SIGABRT-ing the LSP server on
 # a deep editor buffer (RR-29 guard-hole census).
-mycelium-workstack = { git = "https://github.com/tzervas/mycelium-core", rev = "46d2515cbd86d2ae4d1365f4adcd2796737e9f0b" }
+mycelium-workstack = { git = "https://github.com/tzervas/mycelium-core", rev = "3958d2ea3c3921611e33f1f00e3469b29a939a76" }
 
 # M-330 co-authoring loop: the stdin→publishDiagnostics shim used by coauthor.py.
 [[example]]

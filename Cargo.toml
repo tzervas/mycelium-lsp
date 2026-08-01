@@ -13,11 +13,11 @@ workspace = true
 
 [dependencies]
 mycelium-core = { git = "https://github.com/tzervas/mycelium-core", rev = "46d2515cbd86d2ae4d1365f4adcd2796737e9f0b" }
-mycelium-interp = { git = "https://github.com/tzervas/mycelium-runtime", rev = "487b1e7049ff521b1a6fa33f376245089e7dc1e1" }
-mycelium-cert = { git = "https://github.com/tzervas/mycelium-runtime", rev = "487b1e7049ff521b1a6fa33f376245089e7dc1e1" }
+mycelium-interp = { git = "https://github.com/tzervas/mycelium-runtime", rev = "cb3a96348f718661dbd3db43224a036df272e177" }
+mycelium-cert = { git = "https://github.com/tzervas/mycelium-runtime", rev = "cb3a96348f718661dbd3db43224a036df272e177" }
 # The EXPLAIN surfacing (M-221; SC-5): the facade re-derives selection explanations from a
 # PolicyRegistry so "why was this representation chosen?" is answerable in-editor (RFC-0005 §4).
-mycelium-select = { git = "https://github.com/tzervas/mycelium-runtime", rev = "487b1e7049ff521b1a6fa33f376245089e7dc1e1" }
+mycelium-select = { git = "https://github.com/tzervas/mycelium-runtime", rev = "cb3a96348f718661dbd3db43224a036df272e177" }
 # Document sync (M-310): the text → Node pipeline (parse → check → elaborate) the LSP server runs on
 # `didOpen`/`didChange`. The L1 surface prototype, now that RFC-0011 r3 / RFC-0001 r4 are enacted.
 mycelium-l1 = { git = "https://github.com/tzervas/mycelium-l1", rev = "2b92f54349eb0d4f67e32e983874df76908b9ab6" }

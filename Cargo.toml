@@ -20,10 +20,10 @@ mycelium-cert = { git = "https://github.com/tzervas/mycelium-runtime", rev = "78
 mycelium-select = { git = "https://github.com/tzervas/mycelium-runtime", rev = "7842042d770108b2d179ff2874f1871dc4821604" }
 # Document sync (M-310): the text → Node pipeline (parse → check → elaborate) the LSP server runs on
 # `didOpen`/`didChange`. The L1 surface prototype, now that RFC-0011 r3 / RFC-0001 r4 are enacted.
-mycelium-l1 = { git = "https://github.com/tzervas/mycelium-l1", rev = "1d422648d6f41e1077c8f8b7ae7c7e38b2bd254f" }
+mycelium-l1 = { git = "https://github.com/tzervas/mycelium-l1", rev = "2e2a18a4e2933aee8cac16a020589d620e553fb6" }
 # M-359 project metadata: the structured nodule header + manifest + inheritance, so the linter can
 # check the header (unknown key / bad SPDX / non-ISO date = explicit error, G2). Above the kernel (KC-3).
-mycelium-proj = { git = "https://github.com/tzervas/mycelium-proj", rev = "985538d697430a361352f2805b2f2a9aadd1a3e5" }
+mycelium-proj = { git = "https://github.com/tzervas/mycelium-proj", rev = "610624021a0ea43d3919d4200d7522e31a6dcce0" }
 # The LSP wire protocol (M-310): JSON-RPC 2.0 framing + LSP-shaped diagnostics over stdio. The same
 # pinned serde_json the rest of the workspace uses (mycelium-core/-cert/-select/...).
 serde_json.workspace = true

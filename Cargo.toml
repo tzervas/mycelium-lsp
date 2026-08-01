@@ -20,7 +20,7 @@ mycelium-cert = { git = "https://github.com/tzervas/mycelium-runtime", rev = "cb
 mycelium-select = { git = "https://github.com/tzervas/mycelium-runtime", rev = "cb3a96348f718661dbd3db43224a036df272e177" }
 # Document sync (M-310): the text → Node pipeline (parse → check → elaborate) the LSP server runs on
 # `didOpen`/`didChange`. The L1 surface prototype, now that RFC-0011 r3 / RFC-0001 r4 are enacted.
-mycelium-l1 = { git = "https://github.com/tzervas/mycelium-l1", rev = "2b92f54349eb0d4f67e32e983874df76908b9ab6" }
+mycelium-l1 = { git = "https://github.com/tzervas/mycelium-l1", rev = "31f7aaa956cca0e1c7a894eeaff4d10d58b5b2b8" }
 # M-359 project metadata: the structured nodule header + manifest + inheritance, so the linter can
 # check the header (unknown key / bad SPDX / non-ISO date = explicit error, G2). Above the kernel (KC-3).
 mycelium-proj = { git = "https://github.com/tzervas/mycelium-proj", rev = "20b8a6d264ac728e81cfe8cd90cec8d2a91370be" }
